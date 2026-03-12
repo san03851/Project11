@@ -1,5 +1,6 @@
 #include <iostream>
 #include <conio.h>
+#include <windows.h>
 
 using namespace std;
 
@@ -74,7 +75,6 @@ int main()
 	PlayerPos[0] = PRow;
 	PlayerPos[1] = PCol;
 	//create map based on rows and cols
-
 	MapCreate(Row, Col, Map, PlayerPos);
 	PrintMap(Row, Col, Map);
 
@@ -89,6 +89,7 @@ int main()
 				Map[PRow * Col + PCol] = 0;
 				PRow = PRow - 1;
 				Map[PRow * Col + PCol] = 2;
+				system("cls");
 				PrintMap(Row, Col, Map);
 			}
 			else if (key == 'a' && Map[(PRow) * Col + (PCol-1)] == 0)
@@ -96,6 +97,7 @@ int main()
 				Map[PRow * Col + PCol] = 0;
 				PCol = PCol -1;
 				Map[PRow * Col + PCol] = 2;
+				system("cls");
 				PrintMap(Row, Col, Map);
 			}
 			else if (key == 's' && Map[(PRow + 1) * Col + PCol] == 0)
@@ -103,6 +105,7 @@ int main()
 				Map[PRow * Col + PCol] = 0;
 				PRow = PRow + 1;
 				Map[PRow * Col + PCol] = 2;
+				system("cls");
 				PrintMap(Row, Col, Map);
 			}
 			else if (key == 'd' && Map[(PRow)*Col + (PCol + 1)] == 0)
@@ -110,6 +113,7 @@ int main()
 				Map[PRow * Col + PCol] = 0;
 				PCol = PCol + 1;
 				Map[PRow * Col + PCol] = 2;
+				system("cls");
 				PrintMap(Row, Col, Map);
 			}
 		}
